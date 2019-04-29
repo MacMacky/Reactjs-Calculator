@@ -13,7 +13,7 @@ function GridContainer(props) {
     )
   } else {
     return (props.children.map((child, i) =>
-      <Grid item key={i}>
+      <Grid item key={i} xs={props.size && props.size}>
         {child}
       </Grid>
     ))
@@ -24,7 +24,8 @@ GridContainer.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object
-  ])
+  ]),
+  size: PropTypes.number
 }
 
 
