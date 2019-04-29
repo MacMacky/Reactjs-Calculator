@@ -11,22 +11,32 @@ function Row3(props) {
       <GridContainer>
         <CalculatorButton
           label="4"
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('4');
+          }}
         />
         <CalculatorButton
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('5');
+          }}
           label="5"
         />
         <CalculatorButton
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('6');
+          }}
           label="6"
         />
         <CalculatorButton
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('*');
+          }}
           label="*"
         />
         <CalculatorButton
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('1/x');
+          }}
           classes="text-lowercase"
           label="1/x"
         />

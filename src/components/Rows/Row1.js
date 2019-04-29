@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { KeyboardBackspace } from '@material-ui/icons';
 import CalculatorButton from '../CalculatorButton';
@@ -12,23 +12,33 @@ function Row1(props) {
       <GridContainer>
         <CalculatorButton
           label={KeyboardBackspace}
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('ERASE')
+          }}
           hasIcon
         />
         <CalculatorButton
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('CE');
+          }}
           label="CE"
         />
         <CalculatorButton
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('C');
+          }}
           label="C"
         />
         <CalculatorButton
-          handleClick={props.handleClick}
-          label="±"
+          handleClick={() => {
+            props.handleClick('+');
+          }}
+          label="+"
         />
         <CalculatorButton
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('√');
+          }}
           label="√"
         />
       </GridContainer>

@@ -12,12 +12,16 @@ function Row5(props) {
         <CalculatorButton
           label="0"
           isFullWidth
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('0');
+          }}
         />
         <CalculatorButton
           label="."
           isFullWidth
-          handleClick={props.handleClick}
+          handleClick={() => {
+            props.handleClick('.');
+          }}
         />
       </GridContainer>
     </Grid>
