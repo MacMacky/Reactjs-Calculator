@@ -28,7 +28,7 @@ function Row4(props) {
         <CalculatorButton
           handleClick={props.handleClick}
           classes="text-lowercase"
-          label="1/x"
+          label="="
         />
       </GridContainer>
     </Grid>
