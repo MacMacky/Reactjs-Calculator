@@ -1,13 +1,13 @@
 import React, { useReducer } from 'react';
-import { Card, CardContent, Grid } from '@material-ui/core';
+import { Card, CardContent } from '@material-ui/core';
 import Row1 from './Row1';
 import Row2 from './Row2';
 import Row3 from './Row3';
 import Row4 from './Row4';
 import GridContainer from '../GridContainer';
 import Input from '../Input';
-import logo from '../../logo.svg';
 import ImgContainer from '../ImgContainer';
+import Row5 from './Row5';
 
 
 const initState = {
@@ -34,6 +34,7 @@ function Rows(props) {
           <Row2 />
           <Row3 />
           <Row4 />
+          <Row5 />
         </GridContainer>
       </CardContent>
     </Card>
