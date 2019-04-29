@@ -4,8 +4,53 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 25vmin;
   pointer-events: none;
+}
+
+.calculator-button {
+  padding: 18px 5px !important;
+  font-size: 22px !important;
+}
+
+.fab {
+  border-radius: 3px !important;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+  height: 75px !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+#app-container {
+  margin-top: 2%;
+}
+
+#input {
+  margin-bottom: 20px;
+}
+
+#input input {
+  text-align: right;
+}
+
+#img-container {
+  text-align: center;
+}
+
+#text-field {
+  padding-bottom: 15px;
+}
+
+#calc-card {
+  background-color: #e0e0e0;
+}
+
+#main {
+  border-radius: 3px;
+  border: 1px solid #cecece;
 }
 
 .App-header {
@@ -20,7 +65,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #1976d2;
 }
 
 @keyframes App-logo-spin {
