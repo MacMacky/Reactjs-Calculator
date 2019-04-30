@@ -1,7 +1,7 @@
 import equalsLogic from "./equals";
 
 const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMathSignClicked: false }) => {
-  let operations = [], value = '', len = 0;
+  let operations = [], value = '', len = state.operations.length;
   switch (symbol) {
     case '0':
       const newValue = parseInt(state.value) === 0 ? '0' : `${state.value}0`;
@@ -28,6 +28,8 @@ const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMa
       return { ...state, value: (state.value === '0' || state.value.length === 1) ? '0' : state.value.slice(0, state.value.length - 1) }
     case 'C':
       return { operations: [], value: '0' }
+    case 'CE':
+      return { ...state, value: '0' }
     case '+':
     case '-':
     case '/':
@@ -38,8 +40,7 @@ const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMa
       operations = [...state.operations, state.value, symbol];
       return { ...state, operations, value: state.value, isMathSignClicked: true }
     case '=':
-      len = state.operations.length;
-      if (!len || (state.value === state.operations[len - 1])) {
+      if (!len || (state.value === state.operations[len - 1]) || len === 1) {
         return state;
       }
       operations = [...state.operations, state.value];
