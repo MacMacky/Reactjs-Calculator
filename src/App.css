@@ -9,7 +9,7 @@
 }
 
 .calculator-button {
-  padding: 15px 5px !important;
+  padding: 12px 5px !important;
   font-size: 22px !important;
 }
 
@@ -17,7 +17,7 @@
   border-radius: 3px !important;
   padding-right: 20px !important;
   padding-left: 20px !important;
-  height: 69px !important;
+  height: 61px !important;
 }
 
 .text-lowercase {
