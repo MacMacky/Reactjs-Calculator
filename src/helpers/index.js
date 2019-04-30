@@ -30,6 +30,8 @@ const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMa
       return { operations: [], value: '0' }
     case 'CE':
       return { ...state, value: '0' }
+    case '√':
+      return { ...state, value: state.value == '0' ? '0' : Math.sqrt(state.value).toString() }
     case '+':
     case '-':
     case '/':
