@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { KeyboardBackspace } from '@material-ui/icons';
-import CalculatorButton from '../CalculatorButton';
 import { Grid } from '@material-ui/core';
+import { KeyboardBackspace } from '@material-ui/icons';
+import PropTypes from 'prop-types';
 import GridContainer from '../GridContainer';
+import CalculatorButton from '../CalculatorButton';
 
 
 function Row1(props) {

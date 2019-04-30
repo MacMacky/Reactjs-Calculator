@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { Grid } from '@material-ui/core';
-import CalculatorButton from '../CalculatorButton';
+import PropTypes from 'prop-types';
 import GridContainer from '../GridContainer';
+import CalculatorButton from '../CalculatorButton';
 
 
 function Row3(props) {

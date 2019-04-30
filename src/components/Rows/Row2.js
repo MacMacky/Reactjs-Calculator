@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { Grid } from '@material-ui/core';
+import PropTypes from 'prop-types';
 import CalculatorButton from '../CalculatorButton';
 import GridContainer from '../GridContainer';
 
