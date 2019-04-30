@@ -16,7 +16,7 @@ const CHANGE_VALUE = 'CHANGE_VALUE';
 const initState = {
   operations: [],
   value: '0',
-  currentSymbol: ''
+  isMathSignClicked: false
 }
 
 const reducer = (state = initState, action = { type: '', payload: '' }) => {
