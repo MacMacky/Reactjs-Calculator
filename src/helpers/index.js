@@ -29,28 +29,13 @@ const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMa
     case 'C':
       return { operations: [], value: '0' }
     case '+':
-      if (state.isMathSignClicked) {
-        return state;
-      }
-      operations = [...state.operations, state.value, '+'];
-      return { ...state, operations, value: state.value, isMathSignClicked: true }
     case '-':
-      if (state.isMathSignClicked) {
-        return state;
-      }
-      operations = [...state.operations, state.value, '-'];
-      return { ...state, operations, value: state.value, isMathSignClicked: true }
     case '/':
-      if (state.isMathSignClicked) {
-        return state;
-      }
-      operations = [...state.operations, state.value, '/'];
-      return { ...state, operations, value: state.value, isMathSignClicked: true }
     case '*':
       if (state.isMathSignClicked) {
         return state;
       }
-      operations = [...state.operations, state.value, '*'];
+      operations = [...state.operations, state.value, symbol];
       return { ...state, operations, value: state.value, isMathSignClicked: true }
     case '=':
       len = state.operations.length;
