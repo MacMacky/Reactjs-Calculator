@@ -1,4 +1,4 @@
-import equalsLogic from "./equals";
+import equalsLogic, { computeIntegerOrDecimal } from "./equals";
 
 const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMathSignClicked: false }) => {
   let operations = [], value = '', len = state.operations.length;
@@ -55,6 +55,9 @@ const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMa
         value = `${state.value}${symbol}`;
         return { ...state, value };
       }
+    case '1/x':
+      value = state.value === '0' ? '0' : 1 / computeIntegerOrDecimal(state.value).toString();
+      return { ...state, value };
     default:
       return { ...state, value: state.value };
   }
