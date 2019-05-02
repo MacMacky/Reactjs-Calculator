@@ -23,8 +23,8 @@ const equalsLogic = (state = { operations: [], value: '' }) => {
 
 const mathLogic = (num1, num2, symbol) => {
   let value = 0;
-  let val1 = num1 % 1 < 1 ? parseFloat(num1) : parseInt(num1);
-  let val2 = num2 % 1 < 1 ? parseFloat(num2) : parseInt(num2);
+  let val1 = computeIntegerOrDecimal(num1);
+  let val2 = computeIntegerOrDecimal(num2);
   switch (symbol) {
     case '+':
       value = val1 + val2;
@@ -45,5 +45,13 @@ const mathLogic = (num1, num2, symbol) => {
   return value;
 }
 
+const computeIntegerOrDecimal = (num) => {
+  return num % 1 < 1 ? parseFloat(num) : parseInt(num);
+}
+
+
+export {
+  computeIntegerOrDecimal
+}
 
 export default equalsLogic;
