@@ -56,7 +56,7 @@ const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMa
         return { ...state, value };
       }
     case '1/x':
-      value = state.value === '0' ? '0' : 1 / computeIntegerOrDecimal(state.value).toString();
+      value = state.value === '0' ? '0' : (1 / computeIntegerOrDecimal(state.value)).toString();
       return { ...state, value };
     default:
       return { ...state, value: state.value };
