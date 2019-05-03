@@ -1,4 +1,4 @@
-import equalsLogic, { computeIntegerOrDecimal } from "./equals";
+import equalsLogic, { computeIntegerOrDecimal, hasPatternStr } from "./equals";
 
 const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMathSignClicked: false }) => {
   let operations = [], value = '', len = state.operations.length;
@@ -50,7 +50,11 @@ const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMa
       operations = [...state.operations, state.value, symbol];
       return { ...state, operations, value: state.value, isMathSignClicked: true }
     case '=':
-      if (!len || (state.value === state.operations[len - 1]) || len === 1) {
+      if (hasPatternStr(state.value, '0') && hasPatternStr(state.value, '%')) {
+        value = '0';
+        return { ...state, value };
+      }
+      else if (!len || (state.value === state.operations[len - 1]) || len === 1) {
         return state;
       }
       operations = [...state.operations, state.value];
