@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormControl, OutlinedInput, InputLabel } from '@material-ui/core';
+import { FormControl, OutlinedInput } from '@material-ui/core';
 
 
 
