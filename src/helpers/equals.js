@@ -95,12 +95,13 @@ const computeZeroes = (num = '') => {
 }
 
 const hasPatternStr = (str = '', pattern = '') => {
-  return str.indexOf(pattern) > 0;
+  return str.indexOf(pattern) >= 0;
 }
 
 
 export {
   mathLogic,
+  hasPatternStr,
   computeZeroes,
   computePercentage,
   computeIntegerOrDecimal
