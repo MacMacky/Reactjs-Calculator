@@ -6,6 +6,8 @@ const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMa
     case '0':
       const newValue = parseInt(state.value) === 0 ? '0' : `${state.value}0`;
       return { ...state, value: newValue };
+    case '%':
+      return { ...state, value: state.value + symbol };
     case '1':
     case '2':
     case '3':
@@ -16,14 +18,20 @@ const calculatorLogic = (symbol = '', state = { operations: [], value: '0', isMa
     case '8':
     case '9':
       if (state.value === '0') {
+        operations = [...state.operations];
         value = symbol;
       } else if (state.isMathSignClicked) {
+        operations = [...state.operations];
+        value = symbol;
+      } else if (state.value.indexOf('%') > 0) {
+        operations = [...state.operations, state.value, '*'];
         value = symbol;
       }
       else {
+        operations = [...state.operations];
         value = `${state.value}${symbol}`;
       }
-      return { ...state, value, isMathSignClicked: false };
+      return { ...state, operations, value, isMathSignClicked: false };
     case 'ERASE':
       return { ...state, value: (state.value === '0' || state.value.length === 1) ? '0' : state.value.slice(0, state.value.length - 1) }
     case 'C':
