@@ -81,5 +81,17 @@ describe('Test equalsLogic func', () => {
     state.operations = ["9", "/", "3"]
     expect(equalsLogic(state)).toBe(3);
   });
+  it('should return 100 with state =  { operations:  ["9","+","1","*","10"], value: "2" }', () => {
+    state.operations = ["9", "+", "1", "*", "10"]
+    expect(equalsLogic(state)).toBe(100);
+  });
+  it('should return 2 with state =  { operations:  ["10","/","5"], value: "2" }', () => {
+    state.operations = ["10", "/", "5"]
+    expect(equalsLogic(state)).toBe(2);
+  });
+  it('should return 20 with state =  { operations:  ["11","+","1","/","3","*","5"], value: "2" }', () => {
+    state.operations = ["11", "+", "1", "/", "3", "*", "5"]
+    expect(equalsLogic(state)).toBe(20);
+  });
 
 });
