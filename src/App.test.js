@@ -77,5 +77,9 @@ describe('Test equalsLogic func', () => {
     state.operations = ["3", "-", "2", "*", "3", "+", "5"]
     expect(equalsLogic(state)).toBe(8);
   });
+  it('should return 3 with state =  { operations:  ["9","/","3"], value: "2" }', () => {
+    state.operations = ["9", "/", "3"]
+    expect(equalsLogic(state)).toBe(3);
+  });
 
 });
