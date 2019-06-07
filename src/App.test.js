@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { computeZeroes, computePercentage, mathLogic } from './helpers/equals';
+import equalsLogic, { computeZeroes, computePercentage, mathLogic } from './helpers/equals';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -56,4 +56,26 @@ describe('Test mathLogic func', () => {
   it('should return 3500 with param ("3500","1%")', () => {
     expect(mathLogic('3500', '1%', '%')).toBe(35);
   });
-})
+});
+
+describe('Test equalsLogic func', () => {
+  const state = { operations: [], value: "2" }
+  beforeAll(() => {
+    state.operations = ["1", "+", "2"], state.value = "2";
+  })
+
+
+  it('should return 3 with state =  { operations: ["1","+","3"], value: "2" }', () => {
+    expect(equalsLogic(state)).toBe(3);
+  });
+  it('should return 1 with state =  { operations:  ["3","-","2"], value: "2" }', () => {
+    state.operations = ["3", "-", "2"]
+    expect(equalsLogic(state)).toBe(1);
+  });
+
+  it('should return 1 with state =  { operations:  ["3","-","2","*","3","+","5"], value: "2" }', () => {
+    state.operations = ["3", "-", "2", "*", "3", "+", "5"]
+    expect(equalsLogic(state)).toBe(8);
+  });
+
+});
