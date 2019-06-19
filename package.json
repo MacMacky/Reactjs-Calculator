@@ -30,6 +30,7 @@
       "last 1 safari version"
     ]
   },
+  "homepage": "https://macmacky.github.io/Reactjs-Calculator/",
   "devDependencies": {
     "@types/jest": "^24.0.12",
     "jest": "^24.7.1",
